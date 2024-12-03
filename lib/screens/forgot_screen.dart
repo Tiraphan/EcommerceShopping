@@ -1,3 +1,4 @@
+import 'package:e_commerce_shopping_app/screens/otp_screen.dart';
 import 'package:e_commerce_shopping_app/screens/recovery_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -33,14 +34,17 @@ class _ForgotScreenState extends State<ForgotScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
-              Text(
-                "Forgot Password",
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Forgot Password",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               SizedBox(height: 50),
@@ -101,6 +105,30 @@ class _ForgotScreenState extends State<ForgotScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(height: 20),
+                  Text("OR"),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OTPScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Verify Using Number",
+                      style: TextStyle(
+                          color: Color(0xFFDB3022),
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
